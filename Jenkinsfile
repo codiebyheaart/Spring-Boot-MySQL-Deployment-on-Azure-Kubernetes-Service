@@ -16,14 +16,15 @@ pipeline {
     }
 
     stage('Compile & Package') {
-      steps {
-        sh 'mvn clean package -DskipTests'
+       steps {
+          sh 'chmod +x gradlew'
+          sh './gradlew build -x test'
       }
     }
 
     stage('Run Unit Test (Optional)') {
       steps {
-        sh 'mvn test'
+        sh './gradlew test'
       }
     }
 
