@@ -2,7 +2,7 @@ pipeline {
   agent any
 
   environment {
-      IMAGE_NAME = "yourdockerhubusername/springboot-app"
+      IMAGE_NAME = "pankaj8900/springboot-app"
       TAG = "${BUILD_NUMBER}"
   }
 
@@ -11,7 +11,7 @@ pipeline {
     stage('Checkout Code from GitHub') {
       steps {
         git branch: 'main',
-            url: 'https://github.com/yourusername/yourrepo.git'
+            url: 'https://github.com/codiebyheaart/Spring-Boot-MySQL-Deployment-on-Azure-Kubernetes-Service.git'
       }
     }
 
